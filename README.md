@@ -1,10 +1,10 @@
 
 
 
-\### Certificate 1
+Agile Certificate
 ![Certificate 1](./images/agile.png)
 
-\### Certificate 2
+Git Certificate
 
 ![Certificate 2](./images/git.jpeg)
 
