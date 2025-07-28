@@ -6,5 +6,5 @@
 
 \### Certificate 2
 
-https://github.com/dipak12803/5213473\_DipakRajbhar/blob/master/images/git.jpeg
+![Certificate 2](./images/git.jpeg)
 
