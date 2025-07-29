@@ -1,14 +1,10 @@
-# 5213473\_DipakRajbhar
 
 
 
-\### Certificate 1
+Agile Certificate
+![Certificate 1](./images/agile.png)
 
-https://github.com/dipak12803/5213473\_DipakRajbhar/blob/master/images/agile.png
+Git Certificate
 
-
-
-\### Certificate 2
-
-https://github.com/dipak12803/5213473\_DipakRajbhar/blob/master/images/git.jpeg
+![Certificate 2](./images/git.jpeg)
 
