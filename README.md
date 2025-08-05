@@ -8,3 +8,6 @@ Git Certificate
 
 ![Certificate 2](./images/git.jpeg)
 
+![Certificate 3](./images/Introduction to C.jpeg)
+
+

@@ -1,0 +1,12 @@
+ public static void plusMinus(List<Integer> arr) {
+        int n=arr.size();
+        int positiveNum=0,negativeNum=0,zero=0;
+        for(int num:arr){
+            if(num>0) positiveNum++;
+            else if(num<0) negativeNum++;
+            else zero++;
+        }
+        System.out.printf("%.6f\n",(double)positiveNum/n);
+        System.out.printf("%.6f\n",(double)negativeNum/n);
+        System.out.printf("%.6f\n",(double)zero/n);
+    }

@@ -1,0 +1,17 @@
+ public static String timeConversion(String s) {
+    String meridiem=s.substring(8);
+    int hour=Integer.parseInt(s.substring(0,2));
+    String minuteSeconds=s.substring(2,8);
+    
+    if(meridiem.equals("AM")){
+        if(hour==12) hour=0;
+        
+    }
+    else{
+        if(hour!=12) hour+=12;
+    }
+    String hourStr=(hour<10?"0":"")+hour;
+    
+    return hourStr+minuteSeconds;
+     
+    }
