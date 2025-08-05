@@ -2,12 +2,12 @@
 
 
 Agile Certificate
-![Certificate 1](./images/agile.png)
+![Certificate 1](./certificates/agile.png)
 
 Git Certificate
 
-![Certificate 2](./images/git.jpeg)
+![Certificate 2](./certificates/git.jpeg)
 
-![Certificate 3](./images/Introduction to C.jpeg)
+![Certificate 3](./certificates/Introduction to C.jpeg)
 
 
