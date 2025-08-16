@@ -1,0 +1,61 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
+    /*
+     * Complete the 'sumXor' function below.
+     *
+     * The function is expected to return a LONG_INTEGER.
+     * The function accepts LONG_INTEGER n as parameter.
+     */
+
+    public static long sumXor(long n) {
+    
+     // Special case: when n = 0, only x = 0 works
+    if (n == 0) return 1;
+
+    int zeroBits = 0;
+
+    // Check each bit of n
+    while (n > 0) {
+        // If the current bit is 0, we have 2 choices for x's bit (0 or 1)
+        if ((n & 1) == 0) {
+            zeroBits++;
+        }
+        // Move to the next bit
+        n >>= 1;
+    }
+
+    // The number of valid x values = 2^(number of zero bits)
+    return 1L << zeroBits;
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        long n = Long.parseLong(bufferedReader.readLine().trim());
+
+        long result = Result.sumXor(n);
+
+        bufferedWriter.write(String.valueOf(result));
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
