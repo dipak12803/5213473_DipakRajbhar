@@ -1,0 +1,99 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+class Result {
+
+    /*
+     * Complete the 'isValid' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static String isValid(String s) {
+    // Write your code here
+    Map<Character,Integer> count=new HashMap<>();
+    
+    for(char ch:s.toCharArray()){
+        count.put(ch,count.getOrDefault(ch,0)+1);
+    }
+    
+    Map<Integer,Integer> freqCount=new HashMap<>();
+    for(int val:count.values()){
+        freqCount.put(val,freqCount.getOrDefault(val,0)+1);
+    }
+    
+    //if all frequency are same
+    if(freqCount.size()==1){
+        return "YES";
+    }
+    
+    //if there are more than 2 different frequencies
+    if(freqCount.size()>2){
+        return "NO";
+    }
+    
+    // exactly 2 frequencies
+    // List<Integer> keys = new ArrayList<>(freqCount.keySet());
+    
+    
+    // int f1 = keys.get(0), f2 = keys.get(1);
+    // int c1 = freqCount.get(f1), c2 = freqCount.get(f2);
+    
+    // exactly 2 frequencies
+    int f1 = 0, f2 = 0; // the two different frequencies
+    int c1 = 0, c2 = 0; // how many chars have those frequencies
+    int idx = 0;
+
+    for (Map.Entry<Integer, Integer> e : freqCount.entrySet()) {
+        if (idx == 0) {
+        f1 = e.getKey();
+        c1 = e.getValue();
+    } else {
+        f2 = e.getKey();
+        c2 = e.getValue();
+    }
+    idx++;
+}
+    
+     // case 1: one freq is 1 and appears once (remove that char)
+    if ((f1 == 1 && c1 == 1) || (f2 == 1 && c2 == 1)) {
+        return "YES";
+    }
+    
+    if ((Math.abs(f1 - f2) == 1) && ((c1 == 1 && f1 > f2) || (c2 == 1 && f2 > f1))) {
+        return "YES";
+    }
+    
+    return "NO";
+
+
+    }
+
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        String result = Result.isValid(s);
+
+        bufferedWriter.write(result);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
