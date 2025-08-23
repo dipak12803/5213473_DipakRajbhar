@@ -1,0 +1,44 @@
+import java.util.*;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int q=sc.nextInt();
+
+        Stack<Integer> inStack=new Stack<>();
+        Stack<Integer> outStack=new Stack<>();
+
+        for (int i=0;i<q;i++) {
+            int type=sc.nextInt();
+
+            if (type==1) {
+                // for enqueue
+                int val=sc.nextInt();
+                inStack.push(val);
+            } 
+            else if (type==2) {
+                // for dequeue
+                if (outStack.isEmpty()) {
+                    while (!inStack.isEmpty()) {
+                        outStack.push(inStack.pop());
+                    }
+                }
+                if (!outStack.isEmpty()) {
+                    outStack.pop();
+                }
+            } 
+            else if (type==3) {
+                // it will print front
+                if (outStack.isEmpty()) {
+                    while (!inStack.isEmpty()) {
+                        outStack.push(inStack.pop());
+                    }
+                }
+                if (!outStack.isEmpty()) {
+                    System.out.println(outStack.peek());
+                }
+            }
+        }
+        sc.close();
+    }
+}
